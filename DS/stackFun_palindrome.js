@@ -29,6 +29,3 @@ if(rword === word){
 
 
 
-
-
-
