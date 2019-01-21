@@ -30,3 +30,11 @@ var Stack = function(){
      }
 
 }
+
+var myStack = new Stack();
+
+myStack.push("Yo");
+myStack.push("Stack!");
+console.log(myStack.peek());
+console.log(myStack.pop());
+console.log(myStack.peek());
