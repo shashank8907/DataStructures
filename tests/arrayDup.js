@@ -45,25 +45,26 @@ function searchDup3(nums) {
     //Create an array with same lenght and fill it with flase
     var lookUpArray = new Array(nums.length).fill(false);
     for (let i = 0; i < nums.length; i++) {
-       //For every element in the array we make f to t of lookuparrys index
-        if(lookUpArray[nums[i]] === false){
+        //For every element in the array we make f to t of lookuparrys index
+        if (lookUpArray[nums[i]] === false) {
             lookUpArray[nums[i]] = true;
-        }else{
-            console.log(nums[i], " is Dup3", )
+        } else {
+            console.log(nums[i], " is Dup3" )
         }
     }
 }
 
-function searchDup3(nums) {
+function searchDup4(nums) {
     // -ve +ve and flag
-    //Create an array with same lenght and fill it with flase
-    var lookUpArray = new Array(nums.length).fill(false);
+    //Works only for positive inputes 
     for (let i = 0; i < nums.length; i++) {
-       //For every element in the array we make f to t of lookuparrys index
-        if(lookUpArray[nums[i]] === false){
-            lookUpArray[nums[i]] = true;
+        var num = Math.abs(nums[i]); //abs
+        //For every i we make 
+        //Initially all the elements are positive 
+        if (nums[num] > 0) {
+            nums[num] *= -1;
         }else{
-            console.log(nums[i], " is Dup3", )
+            console.log(num, " is Dup3");
         }
     }
 }
@@ -71,4 +72,4 @@ function searchDup3(nums) {
 
 
 
-searchDup3([1, 4, 3, 5, 6, 6, 2]);
+searchDup4([1, 4, 3, 5, 6, 6, 2]); //each element should be in the range of 1 to n-1,
