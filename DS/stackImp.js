@@ -1,4 +1,5 @@
 //Create a stack
+// by default we keep it as 0 and after after pushing it we incriment the count. so when we pop it we dec and pop same for peek. And while pushing we push it to existing count.
 var Stack = function(){
     this.count = 0;
     this.storage = {};
