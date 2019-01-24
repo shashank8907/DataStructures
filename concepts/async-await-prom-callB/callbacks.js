@@ -5,11 +5,12 @@ var posts =[
 ];
 
 function getPost(callback){
+    callback({title:"Title3", post:"post3"});//Callback otherway around
+
     setTimeout(()=>{
         let output = `
         
         `;
-        callback();//This is valid but not working
         posts.forEach(post => {
             output += `<li>${post.title}</li>`;
         });
@@ -17,7 +18,7 @@ function getPost(callback){
     },2000)
 }
 
-function createPost(post) { 
+const createPost = function(post) { 
     setTimeout(() => {
         posts.push(post);
     }, 3000);
@@ -34,5 +35,5 @@ function createPost(post) {
 //no matter what 
 
                 //passing callback
-getPost(createPost({title:"Title3", post:"post3"}));
+getPost(createPost);  
 
