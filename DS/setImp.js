@@ -30,8 +30,24 @@ function MySet(){
          if(!this.has(eleement)){
             //enters this block if the element is not present in the collection
             collection.push(eleement);
-            return true //Implies that the element has been added 
+            return true //Implies that the element has been added
          }
+         return false//No [need of else block because...
+     }
+
+     //To remove and element
+     this.remove = function(element){
+        if(this.has(element)){
+            //enters this block if the element is present in the collection
+            index = collection.indexOf(element);//okay for now
+            collection.splice(index,1);
+            return true //Implies that the element has been removed
+         }
+         return false//No [need of else block because...
+     }
+
+     this.size = function(){
+         return collection.length;
      }
 
 }
