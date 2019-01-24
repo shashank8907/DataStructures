@@ -50,16 +50,48 @@ function MySet(){
          return collection.length;
      }
 
+     //Bellow following functions are not in the ES6 
+     //Which require working with two sets
+
+
+     //This method will return union on two sets
+     this.union = function(otherSet){
+        //This function is called on set and another set is sent as parameter
+        //And both the sets are created using Myset()
+        
+        var firstSet = this.values();
+        var secondSet = otherSet.values();
+
+        //Create another array to store result
+
+        var unionSet = new MySet();
+
+        firstSet.forEach(element => {
+            unionSet.add(element)
+        });
+
+
+        secondSet.forEach(element => {
+            unionSet.add(element)
+        });
+        return unionSet.values();
+
+     }
+
+
 }
 
-var myset = new MySet();
-myset.add(1);
-myset.add(2);
-myset.add(3);
-myset.add(1);
-console.log(myset.values());
+var myset1 = new MySet();
+myset1.add(1);
+myset1.add(2);
+myset1.add(3);
+var myset2 = new MySet();
+myset2.add(22);
+myset2.add(31);
+myset2.add(41);
+myset2.add(1);
 
-
+console.log(myset1.union(myset2))
 
 
 
