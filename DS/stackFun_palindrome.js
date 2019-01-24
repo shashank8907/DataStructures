@@ -1,5 +1,5 @@
 //palandrome using inbuilt js-stack
-
+//Stack is basicallay same as array 
 var letters = [];
 var word = "malayalam"
 
