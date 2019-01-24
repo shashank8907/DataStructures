@@ -4,11 +4,12 @@ var posts =[
 
 ];
 
-function getPost(){
+function getPost(callback){
     setTimeout(()=>{
         let output = `
         
         `;
+        callback();//This is valid but not working
         posts.forEach(post => {
             output += `<li>${post.title}</li>`;
         });
@@ -18,10 +19,20 @@ function getPost(){
 
 function createPost(post) { 
     setTimeout(() => {
-        post.push(post);
-    }, 1000);
+        posts.push(post);
+    }, 3000);
  }
 
-createPost({title:"Title3", post:"post3"});
 
-getPost();
+// getPost();
+// createPost({title:"Title3", post:"post3"});
+
+
+//we gave set timeoout for both get post and createpost 
+//createpost has 3000 and getpost has 2000
+//currently getpost is executing first. we want post to execute only after create post
+//no matter what 
+
+                //passing callback
+getPost(createPost({title:"Title3", post:"post3"}));
+
