@@ -41,7 +41,7 @@ return new Promise((resolve, reject) => {
         }
     }, 3000);
 });
-}
+} 
 
 // createPost({title: "Title3",post: "post3"});
 // getPost();
